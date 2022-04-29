@@ -36,3 +36,13 @@ window.addEventListener('scroll', _.throttle(function() {
   } 
 }, 300));
 // _.throttle(함수, 시간)
+
+
+// item fade
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    delay: (index+1) * .7, //0.7 1.4 2.1 2.7 순으로 item 나타나기
+    opacity: 1
+  });
+});
